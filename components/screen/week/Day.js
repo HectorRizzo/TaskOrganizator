@@ -2,18 +2,18 @@ import React from 'react'
 import { View } from 'react-native';
 import { Container, Header, Content, Button, ListItem, Text, Icon, Left, Body, Right, Switch } from 'native-base';
 import Horario from "../../../data/horario/Horario.js";
+const data= require('../../../data/archivos/horario.json')
 
 
 export const Day = (props) => {
 
     let arr=[]
     let horario= new Horario();
-    let dia= horario.getOneDay(props.index)[0];
+    let dia= data[props.index]
     if(dia!=undefined){
-            let mapa=new Map(Object.entries(dia))
-        Object.entries(dia).map((d)=> {
-        d[1].forEach(hora => {
-            arr.push(<ListItem icon>  
+        dia.map(d => {
+            d[1].map(hora => {
+                arr.push(<ListItem icon>  
                             <Left>
                                 <Text>{hora}</Text>
                             </Left>
@@ -21,10 +21,60 @@ export const Day = (props) => {
                             <Text>{d[0]}</Text>
                             </Body>
                         </ListItem>)
+            })
         })
-    })
     }
-    console.log(dia)
+        
+    
+    /*
+    
+  "Ciencias Sostenibilidad": Array [
+    "9:00",
+    "9:30",
+    "10:00",
+  ],
+  "Ingles": Array [
+    "07:00",
+    "07:30",
+    "08:00",
+    "08:30",
+  ],
+  "Lenguaje de Programacion": Array [
+    "11:00",
+    "11:30",
+    "12:00",
+  ],
+  "Seguridad de la Informacion": Array [
+    "16:00",
+    "16:30",
+    "17:00",
+  ],
+}
+1
+not undefine
+Object {
+  "Ciencias Sostenibilidad": Array [
+    "9:00",
+    "9:30",
+    "10:00",
+  ],
+  "Ingles": Array [
+    "07:00",
+    "07:30",
+    "08:00",
+    "08:30",
+  ],
+  "Lenguaje de Programacion": Array [
+    "11:00",
+    "11:30",
+    "12:00",
+  ],
+  "Seguridad de la Informacion": Array [
+    "16:00",
+    "16:30",
+    "17:00",
+  ],
+    */
     
     
 

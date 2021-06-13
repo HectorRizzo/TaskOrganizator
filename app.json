@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "sport-match-app",
-    "slug": "sport-match-app",
+    "name": "Task-Organizator",
+    "slug": "task-organizator-kylecreative",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,10 +23,13 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.kylecreative.taskOrganizator"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "organizador de tareas escolares",
+    "githubUrl": "https://github.com/HectorRizzo/TaskOrganizator.git"
   }
 }

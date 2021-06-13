@@ -1,0 +1,36 @@
+[       
+       [
+
+       ],
+        
+    [   ["Ingles",["07:00","07:30","08:00","08:30"]],
+        ["Ciencias Sostenibilidad",["9:00","9:30","10:00"]],
+        ["Lenguaje de Programacion",["11:00","11:30","12:00"]],
+        ["Seguridad de la Informacion",["16:00","16:30","17:00"]]
+    ]
+    ,
+    
+    [
+        ["Organización de Computadores",["07:30","08:00","08:30"]],
+        ["Ingenieria de Software I", ["11:00","11:30","12:00","12:30"]]
+    ],
+    
+    [   ["Ingles",["07:00","07:30","08:00","08:30"]],
+        ["Ciencias Sostenibilidad",["9:00","9:30","10:00"]],
+        ["Lenguaje de Programacion",["11:00","11:30","12:00"]],
+        ["Seguridad de la Informacion",["16:00","16:30","17:00"]]
+    ]
+    
+    ,
+    [   ["Organización de Computadores",["07:30","08:00","08:30"]],
+        ["Ingenieria de Software I", ["11:00","11:30","12:00","12:30"]]
+
+    ]
+    ,
+    [
+
+    ],[
+
+    ]
+
+]

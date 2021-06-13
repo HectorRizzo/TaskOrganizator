@@ -4,6 +4,9 @@ import { Container, Text } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import  BottomNavbar  from "./components/navbar/BottomNavbar.js";
+import { isIphoneX } from 'react-native-iphone-x-helper'
+import type { KeyboardAwareInterface } from './KeyboardAwareInterface'
+
 
 
 export default class App extends React.Component {
@@ -25,13 +28,10 @@ export default class App extends React.Component {
 
   render() {
     if (!this.state.isReady) {
-
+      
     }
-
-
     return (
               <BottomNavbar />
-
     );
   }
 }

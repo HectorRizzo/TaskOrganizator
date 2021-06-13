@@ -8,6 +8,10 @@ import { HomeScreen } from "../screen/HomeScreen.js";
 import { CalendarScreen } from "../screen/CalendarScreen.js";
 import  {NewTask}  from "../screen/NewTask.js";
 import { TaskScreen } from "../screen/TaskScreen.js";
+import {Notification} from "../notification/Notificacion.js"
+import {Utilidades} from "../notification/Utilities.js"
+import {ScheduleNotification} from "../notification/Notificacion.js"
+
 
 
 
@@ -16,9 +20,9 @@ export default class BottomNavbar extends React.Component {
     {
       key: 'home',
       icon: 'home',
-      label: 'Home',
-      barColor: '#388Ef1',
-      pressColor: 'rgba(255, 255, 255, 0.16)',
+      label: 'Inicio',
+      barColor: '#fff',
+      pressColor: 'rgba(0, 0, 255, 0.16)',
       screen: <HomeScreen />
     },
 
@@ -26,26 +30,27 @@ export default class BottomNavbar extends React.Component {
       key: 'calendar',
       icon: 'calendar',
       label: 'Horario',
-      barColor: '#B7B71C',
-      pressColor: 'rgba(255, 255, 255, 0.16)',
+      barColor: '#fff',
+      pressColor: 'rgba(0, 0, 255, 0.16)',
       screen: <CalendarScreen />
     },
     {
       key: 'tasks',
       icon: 'check',
-      label: 'Tasks',
-      barColor: '#E64A19',
-      pressColor: 'rgba(255, 255, 255, 0.16)',
+      label: 'Tareas',
+      barColor: '#fff',
+      pressColor: 'rgba(0, 0, 255, 0.16)',
             screen: <TaskScreen />
     },
     {
-      key: 'configuration',
+      key: 'utilidades',
       icon: 'tool',
-      label: 'Configuración',
-      barColor: '#152535',
-      pressColor: 'rgba(255, 255, 255, 0.16)',
-      screen: <View> </View>
+      label: 'Utilidades',
+      barColor: '#fff',
+      pressColor: 'rgba(0, 0, 255, 0.16)',
+      screen: <Utilidades />
     }
+    
   ]
   state = {
     activeTab: 'home'
@@ -54,11 +59,11 @@ export default class BottomNavbar extends React.Component {
   screen=this.tabs[0].screen;
 
   renderIcon = icon => ({ isActive }) => (
-    <Icon size={24} color="white" name={icon} />
+    <Icon size={24} color="#004ba0" name={icon} />
   )
 
   renderTab = ({ tab, isActive }) => (
-    <FullTab
+    <FullTab 
       isActive={isActive}
       key={tab.key}
       label={tab.label}
@@ -68,7 +73,7 @@ export default class BottomNavbar extends React.Component {
 
 
   render() {
-
+    ScheduleNotification
     return (
       <View style={{ flex: 1 }}>
         <View style={{ flex: 1 }}>

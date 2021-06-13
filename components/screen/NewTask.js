@@ -8,17 +8,21 @@ import Task from "../../models/Task.js";
 export const  NewTask=(props) =>  {
   const [date, setDate] = useState(new Date())
   const [branches, setBranches] = useState([
-        { materia: ' Ingles', id: 1 },
-        { materia: ' Lenguaje de Programación', id: 2 },
-        { materia: ' Ciencias de la sostenibilidad', id: 3 },
-        { materia: ' Organización de computadores', id: 4 },
-        { materia: ' Seguridad de la información', id: 5 },
-        { materia: ' Ingeniería de Software I', id: 6 }])
+        { materia: ' Ingles', id: 0 },
+        { materia: ' Lenguaje de Programación', id: 1 },
+        { materia: ' Ciencias de la sostenibilidad', id: 2 },
+        { materia: ' Organización de computadores', id: 3 },
+        { materia: ' Seguridad de la información', id: 4 },
+        { materia: ' Ingeniería de Software I', id: 5 }])
 
-  const [selectedBranch, setSelectedBranch] = useState(branches[0])
+  const [selectedBranch, setSelectedBranch] = useState(branches[0].id)
   const [title, setTitle] = useState("")
   const [descripcion, setDescripcion] = useState("")
-  
+  const[index, setIndex]=useState(Math.floor(Math.random()*101))
+
+
+
+
   let handleChangeTitle=(event)=> {
     
     setTitle(event.nativeEvent.text);
@@ -34,17 +38,17 @@ export const  NewTask=(props) =>  {
   
   let handleSuccess=()=>{
     let hora=`${ (date.getHours()<10?'0':'') + date.getHours() } : ${ (date.getMinutes()<10?'0':'') + date.getMinutes() }`
-    let tarea= new Task(branches[selectedBranch].materia,title,descripcion,date.toString().substr(4,11),hora)
+    let tarea= new Task(branches[selectedBranch].materia,title,descripcion,date.toString().substr(4,11),hora,index)
 
     props.route.params.setTask(prevTasks => {
   return [...prevTasks, tarea];
 })
-    props.navigation.navigate('TaskHome',{tasks: props.route.params.task })
+    props.navigation.navigate('Tareas',{tasks: props.route.params.task })
   }
 
     return (
       <Container>
-        
+        <Text style={styles.number}> {index} </Text>
         <Content >
           <Form style={styles.content}>
             <Picker
@@ -104,6 +108,15 @@ const styles = StyleSheet.create({
   content:{
         marginTop:0,
     marginBottom:20
+  },
+  number:{
+        fontSize: 20,
+        color: 'red',
+        marginTop:10,
+        marginRight:8,
+            fontWeight: 'bold',
+        textAlign: 'right',
+        
   },
   
   bigBlue: {

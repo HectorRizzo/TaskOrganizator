@@ -4,12 +4,14 @@ export default class Task {
     descripcion=""
     dia=""
     hora=""
-    constructor(materia,title, descripcion, dia, hora){
+    index=""
+    constructor(materia,title, descripcion, dia, hora,index){
         this.materia=materia;
         this.title=title;
         this.descripcion=descripcion;
         this.dia=dia;
         this.hora=hora;
+        this.index=index;
     }
 
     getMateria(){

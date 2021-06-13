@@ -70,7 +70,6 @@ export default class Horario {
 } )
         .then(r => r.text())
         .then(text => {
-            console.log('text decoded:', text);
         });
 
     }
